@@ -14,6 +14,7 @@ var sequelize = require('sequelize');
 // create connection to mysql here
 // var db = mysql.connection; NEED TO CREATE THIS
 
+
 // Set up MySQL connection.
 
 var connection = mysql.createConnection({
@@ -65,21 +66,28 @@ app.use(cookieParser());
  // Set Static Folder
 app.use(express.static(path.join(__dirname, 'public')));
  // Express Session
+
+
 app.use(session({
     secret: 'secret',
     saveUninitialzed: true,
     resave: true
 }));
- // Passport Init
+
+// Passport Init
 app.use(passport.initialize());
 app.use(passport.session());
- // Express Validator
+
+// Express Validator
+
 app.use(expressValidator({
     errorFormatter: function(param, msg, value) {
         var namespace = param.split('.')
         , root = namespace.shift()
         , formParam = root;
-         while(namespace.length) {
+
+        while(namespace.length) {
+
             formParam += '[' + namespace.shift() + ']';
         }
         return {
@@ -89,20 +97,28 @@ app.use(expressValidator({
         };
     }
 }));
- // Connect Flash
+
+// Connect Flash
 app.use(flash());
- // Global vars for flash messages
+
+// Global vars for flash messages
+
 app.use(function (req, res, next) {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
     next();
 });
- // Middleware routes
+
+
+// Middleware routes
 app.use('/', routes);
 app.use('/users', users);
- // Set Port
+
+// Set Port
 app.set('port', (process.env.PORT || 3000)); //VERIFY port number
- app.listen(app.get('port'), function() {
+
+app.listen(app.get('port'), function() {
     console.log('Server started on port '+app.get('port'));
-}); 
+});
+
