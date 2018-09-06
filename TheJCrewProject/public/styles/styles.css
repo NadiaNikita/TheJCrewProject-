@@ -1,3 +1,15 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+.wrapper {
+  display: grid;
+  justify-content: center;
+}
+
+.jumbotron {
+  font-weight: 900;
+  margin-top: 1px;
+  background-image: url("wine.jpg");
+  background-size: cover;
+}
