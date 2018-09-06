@@ -1,24 +1,26 @@
 var db = require("../models");
 
-module.exports = function(app) {
-  // Load index page
-  app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
-  });
+var express = require("express");
+var router = express.Router();
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
-  });
+module.exports = function(app) {
+
+
+// Get Homepage
+app.get('/', function(req, res) {
+  db.Foods.findAll({}).then(result => { console.log(result); res.render('index', {wineFoods: result}); });
+});
+
+// Get Homepage
+app.get('/main', function(req, res) {
+  res.render('main');
+});
+
+// shows list of all wine bottles
+app.get('/example', function(req, res) {
+  db.pairings.findAll({}).then(result => { console.log(result); res.render('example', {wineBottle: result}); });
+});
+
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {

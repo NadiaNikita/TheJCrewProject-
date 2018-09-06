@@ -9,6 +9,9 @@ var db = require("./models");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
+// var orm = require("./config/orm.js");
+// orm.selectWhere("wine_bottle", "pairings", "food_name", "Beef");
+
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
