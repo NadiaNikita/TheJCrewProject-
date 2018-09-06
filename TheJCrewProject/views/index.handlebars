@@ -36,7 +36,7 @@
       </nav>
       <p></p>
       <p class="lead">
-        <div class="jumbotron" style="height: 500px">
+        <div class="jumbotron" id="Background" style="height: 500px">
           <h1 class="text-center">It's Wine O'Clock</h1>
           <p class="lead text-center">Choose a link in the navigation bar to pick your poison!</p>
           <hr class="my-4">
@@ -56,9 +56,8 @@
                       </li>
                       <option value="Foods" name="Foods">{{food_name}}</option>
                       {{/each}}
-                      <input type="button" Value="Set" onClick="putCookie()"></input>
-                      <a class="nav-link" href="/example">Wine<span class="sr-only">(current)</span></a>
                     </select>
+                     <a class="nav-link" href="/example">Wine Bottle<span class="sr-only">(current)</span></a>
                   </div>
                   <br />
                 </div>
@@ -67,7 +66,7 @@
             </div>
         </p>
       </div>
-        </form>
+    </form>
 </body>
 </html>
 
