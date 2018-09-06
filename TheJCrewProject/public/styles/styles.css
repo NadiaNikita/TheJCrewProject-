@@ -1,3 +1,22 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+.wrapper {
+  display: grid;
+  justify-content: center;
+}
+
+.jumbotron {
+  background-image: url("/public/images/wine_160.jpg");
+  font-weight: 900;
+  margin-top: 1px;
+  background-image: url("wine.jpg");
+  background-size: cover;
+}
+
+/* #background{
+  background-image: url("/public/images/wine_160.jpg");
+  height: 25%;
+  background-size: cover;
+} */

@@ -1,26 +1,52 @@
-DROP DATABASE IF EXISTS wine_pairing;
-CREATE DATABASE wine_pairing;
+DROP DATABASE IF EXISTS bottlesowine;
+create database bottlesowine;
 
-use wine_pairing;
+use bottlesowine;
 
-CREATE TABLE wine_foods(
-	wine_id int NOT NULL, 
-	wine_class varchar(25) NOT NULL,
-	food_category varchar(25) NOT NULL,
-	food_class varchar(25) NOT NULL,
-    food_name varchar(25) NOT NULL
-    
-);
+CREATE TABLE `foods` (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  food_id int(11) DEFAULT NULL,
+  food_name varchar(255) DEFAULT NULL,
+  createdAt datetime NOT NULL,
+  updatedAt datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
-use wine_pairing;
+use bottlesowine;
 
 
-CREATE TABLE wine_bottle(
-	wine_id int NOT NULL, 
-	wine_class varchar(25) NOT NULL,
-    wine_name varchar(25) NOT NULL,
-	wine_bottle varchar(255) NOT NULL
-);
+CREATE TABLE wines(
+  id int(11) NOT NULL AUTO_INCREMENT,
+  wine_id int(11) DEFAULT NULL,
+  wine_class varchar(255) DEFAULT NULL,
+  createdAt datetime NOT NULL,
+  updatedAt datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- DROP DATABASE IF EXISTS testdb;
--- CREATE DATABASE testdb;
+
+use bottlesowine;
+
+CREATE TABLE `wnames` (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  wine_id int(11) DEFAULT NULL,
+  wine_name varchar(255) DEFAULT NULL,
+  createdAt datetime NOT NULL,
+  updatedAt datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+use bottlesowine;
+
+CREATE TABLE pairings(
+  id int(11) NOT NULL AUTO_INCREMENT,
+  wine_id int(11) DEFAULT NULL,
+  food_id int(11) DEFAULT NULL,
+  food_name varchar(255) DEFAULT NULL,
+  wine_name varchar(255) DEFAULT NULL,
+  wine_bottle varchar(255) DEFAULT NULL,
+  createdAt datetime NOT NULL,
+  updatedAt datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
