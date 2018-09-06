@@ -11,7 +11,7 @@
   background-image: url("/public/images/wine_160.jpg");
   font-weight: 900;
   margin-top: 1px;
-  background-image: url("wine.jpg");
+  /* background-image: url("wine.jpg"); */
   background-size: cover;
 }
 
